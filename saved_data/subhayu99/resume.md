@@ -5,17 +5,33 @@
 - [https://subhayu.codes](https://subhayu.codes)
 - Shyampur Colony, Street No 18
 
+I am a good boy.
+
 
 ## Skills
+  - Ethical
+  - Hacking
+  - Programming
+  - Fighting
 
 
 ## Education
 
-### <span></span> <span>2018-08-07 -- 2022-07-01</span>
+### <span>Calcutta Institute of Engg. & Management</span> <span>2018-08-07 -- 2022-07-01</span>
 
+  - Bachelor
+  - of
+  - Information
+  - Technology
+  - CGPA:
+  - 8.17/10
 
-### <span></span> <span>2016-05-12 -- 2018-04-27</span>
+### <span>Amrita Vidyalayam</span> <span>2016-05-12 -- 2018-04-27</span>
 
+  - High
+  - School
+  - CGPA:
+  - 6/10
 
 ### <span></span> <span>2014-05-10 -- 2016-04-23</span>
 
@@ -23,7 +39,7 @@
 
 ## Experience
 
-### <span>, </span> <span>2022-01-03 -- 0001-01-01</span>
+### <span>DevOps Engineer Intern, FiftyFive Technologies</span> <span>2022-01-03 -- 0001-01-01</span>
 
 
 ### <span>, </span> <span>2019-06-06 -- 2019-07-19</span>
