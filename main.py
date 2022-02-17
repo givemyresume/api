@@ -21,7 +21,7 @@ async def read_item(user: str):
             os.system("./push.sh")
             return {
                 "status": "SUCCESS",
-                "message": "Done"
+                "message": f"You can download you resume from here: https://raw.githubusercontent.com/subhayu99/resume_builder_api/main/{data['user']}/index.pdf"
             }
         except:
             return {
@@ -31,7 +31,7 @@ async def read_item(user: str):
     except:
         return {
             "status": "FAILED",
-            "context": "User not found with the given username. Have you signed up yet?"
+            "message": "User not found with the given username. Have you signed up yet?"
         }
 
 
