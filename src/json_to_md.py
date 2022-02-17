@@ -24,18 +24,18 @@ def write_to_file(data):
         except:
             print(f"cannot create '{user_dir}'!")
     
-    mdfile = f"{user_dir}/resume.md"
+    # mdfile = f"{user_dir}/resume.md"
     
-    with open(mdfile, "w+") as f:
-        f.write(md)
+    # with open(mdfile, "w+") as f:
+    #     f.write(md)
 
     with open(f"{user_dir}/data.json", "w") as j:
         json.dump(data, j)
 
     prefix = f"{user_dir}/index"
 
-    with open(mdfile, encoding="utf-8") as mdfp:
-        md = mdfp.read()
+    # with open(mdfile, encoding="utf-8") as mdfp:
+    #     md = mdfp.read()
     html = make_html(md, prefix=prefix, css_path=f"{script_dir}/resume.css")
 
     with open(prefix + ".html", "w", encoding="utf-8") as htmlfp:
