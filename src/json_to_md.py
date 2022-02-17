@@ -79,7 +79,8 @@ def experience(data):
     res = """## Experience
 """
     for i in data["job"]:
-        res += f"""
+        if not data["job"][i]["position"]=="":
+            res += f"""
 ### <span>{data["job"][i]["position"]}, {data["job"][i]["employer"]}</span> <span>{data["job"][i]["start"]} -- {data["job"][i]["end"]}</span>
 
 """
@@ -94,7 +95,8 @@ def education(data):
     res = """## Education
 """
     for i in data["education"]:
-        res += f"""
+        if not data["education"][i]["school"]=="":
+            res += f"""
 ### <span>{data["education"][i]["school"]}</span> <span>{data["education"][i]["start"]} -- {data["education"][i]["end"]}</span>
 
 """
@@ -109,7 +111,8 @@ def project(data):
     res = """## Projects
 """
     for i in data["project"]:
-        res += f"""
+        if not data["project"][i]["name"]=="":
+            res += f"""
 ### <span>{data["project"][i]["name"]}</span> <span>{data["project"][i]["end"]}</span>
 
 """

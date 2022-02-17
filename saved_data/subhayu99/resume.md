@@ -17,19 +17,10 @@
 ### <span>Amrita Vidyalayam</span> <span>2016-05-12 -- 2018-04-27</span>
 
 
-### <span></span> <span> -- </span>
-
-
 
 ## Experience
 
 ### <span>DevOps Engineer Intern, FiftyFive Technologies</span> <span>2022-01-03 -- 0001-01-01</span>
-
-
-### <span>, </span> <span> -- </span>
-
-
-### <span>, </span> <span> -- </span>
 
 
 
