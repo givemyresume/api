@@ -12,7 +12,7 @@
 
 ## Education
 
-### <span>Calcutta Institute of Engg. & Management</span> <span>2018-08-07 -- 2022-07-01</span>
+### <span>Calcutta Institute of Engg. & Management</span> <span>2018-08-07 -- Present</span>
 
   - 
 
