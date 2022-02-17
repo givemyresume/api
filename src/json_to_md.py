@@ -24,9 +24,9 @@ def write_to_file(data):
         except:
             print(f"cannot create '{user_dir}'!")
     
-    # mdfile = f"{user_dir}/resume.md"
-    # with open(mdfile, "w+") as f:
-    #     f.write(md)
+    mdfile = f"{user_dir}/resume.md"
+    with open(mdfile, "w+") as f:
+        f.write(md)
 
     with open(f"{user_dir}/data.json", "w") as j:
         json.dump(data, j)
