@@ -1,0 +1,71 @@
+{
+    "user": "foo-bar",
+    "full_name": "foo-bar",
+    "address": "foo-bar",
+    "phone": "foo-bar",
+    "email": "foo-bar",
+    "website": "foo-bar",
+    "summary": "foo-bar",
+    "skills": "foo-bar",
+    "education": {
+        "1": {
+            "school": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "2": {
+            "school": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "3": {
+            "school": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        }
+    },
+    "job": {
+        "1": {
+            "employer": "foo-bar",
+            "position": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "2": {
+            "employer": "foo-bar",
+            "position": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "3": {
+            "employer": "foo-bar",
+            "position": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        }
+    },
+    "project": {
+        "1": {
+            "name": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "2": {
+            "name": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "3": {
+            "name": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        }
+    },
+    "references": "foo-bar"
+}

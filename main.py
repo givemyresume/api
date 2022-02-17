@@ -1,9 +1,9 @@
 from email import message
+import os
 from fastapi import FastAPI, Request
-from pydantic import BaseModel
 from faunadb import query as q
 from faunadb.client import FaunaClient
-from json_to_md import write_to_file
+from src.json_to_md import write_to_file
 
 
 app = FastAPI()
@@ -18,6 +18,7 @@ async def read_item(user: str):
         try:
             data = client.query(q.get(q.match(q.index("resume_index"), user)))["data"]
             write_to_file(data)
+            os.system("./push.sh")
             return {
                 "status": "SUCCESS",
                 "message": "Done"
