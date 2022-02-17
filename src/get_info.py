@@ -7,7 +7,7 @@ def push_to_github(filename, path, repo, branch, token):
 
     base64content=base64.b64encode(open(filename,"rb").read())
 
-    data = requests.get(url+'?ref='+branch, headers = {"Authorization": "token "+token, "Accept": "application/vnd.github.v3+json"}).json()
+    data = requests.get(url, headers = {"Authorization": "token "+token, "Accept": "application/vnd.github.v3+json"}).json()
     print(data)
     sha = data['sha']
 
@@ -25,7 +25,7 @@ def push_to_github(filename, path, repo, branch, token):
         print("nothing to update")
 
 token = "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"
-filename="/home/subhayu/Downloads/ResumeBuilder/api/saved_resumes/subhayu99/data.json"
+filename="/home/subhayu/Downloads/ResumeBuilder/api/saved_data/subhayu99/data.json"
 path="subhayu99/data.json"
 repo = "subhayu99/saved_resumes"
 branch="main"
