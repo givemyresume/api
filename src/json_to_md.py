@@ -69,7 +69,8 @@ def skill(data):
     res = """## Skills
 """
     for i in data["skills"].split("\n"):
-        res += f"""  - {i}
+        if not i=="":
+                res += f"""  - {i}
 """
     return res
 
@@ -83,7 +84,8 @@ def experience(data):
 
 """
         for j in data["job"][i]["details"].split("\n"):
-            res += f"""  - {j}
+            if not j=="":
+                res += f"""  - {j}
 """
     return res
 
@@ -97,7 +99,8 @@ def education(data):
 
 """
         for j in data["education"][i]["details"].split("\n"):
-            res += f"""  - {j}
+            if not j=="":
+                res += f"""  - {j}
 """
     return res
 
