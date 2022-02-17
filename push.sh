@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Set the github token using `export GITHUB_TOKEN="ghp_NUpU9xxtwrrq9Tz2nLx2Rc9Rjh3axxxxxxxx"`
 git add * saved_data/*
