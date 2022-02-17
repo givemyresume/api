@@ -70,7 +70,7 @@ def skill(data):
 """
     for i in data["skills"].split("\n"):
         if not i=="":
-                res += f"""  - {i}
+            res += f"""  - {i}
 """
     return res
 

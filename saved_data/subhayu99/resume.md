@@ -7,6 +7,9 @@
 
 
 ## Skills
+  - Hacking
+  - Gaming
+  - Fighting
 
 
 ## Education
