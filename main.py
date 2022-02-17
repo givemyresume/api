@@ -21,7 +21,7 @@ async def read_item(user: str):
             os.system("./push.sh")
             return {
                 "status": "SUCCESS",
-                "message": f"You can download you resume from here: https://raw.githubusercontent.com/subhayu99/resume_builder_api/main/{data['user']}/index.pdf"
+                "message": f"You can download you resume from here: https://raw.githubusercontent.com/subhayu99/resume_builder_api/main/saved_data/{data['user']}/index.pdf"
             }
         except:
             return {
