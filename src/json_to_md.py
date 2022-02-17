@@ -68,7 +68,7 @@ def personal(data):
 def skill(data):
     res = """## Skills
 """
-    for i in data["skills"].split():
+    for i in data["skills"].split("\n"):
         res += f"""  - {i}
 """
     return res
@@ -82,7 +82,7 @@ def experience(data):
 ### <span>{data["job"][i]["position"]}, {data["job"][i]["employer"]}</span> <span>{data["job"][i]["start"]} -- {data["job"][i]["end"]}</span>
 
 """
-        for j in data["job"][i]["details"].split():
+        for j in data["job"][i]["details"].split("\n"):
             res += f"""  - {j}
 """
     return res
@@ -96,7 +96,7 @@ def education(data):
 ### <span>{data["education"][i]["school"]}</span> <span>{data["education"][i]["start"]} -- {data["education"][i]["end"]}</span>
 
 """
-        for j in data["education"][i]["details"].split():
+        for j in data["education"][i]["details"].split("\n"):
             res += f"""  - {j}
 """
     return res
@@ -110,7 +110,7 @@ def project(data):
 ### <span>{data["project"][i]["name"]}</span> <span>{data["project"][i]["end"]}</span>
 
 """
-        for j in data["project"][i]["details"].split():
+        for j in data["project"][i]["details"].split("\n"):
             res += f"""  - {j}
 """
     return res
