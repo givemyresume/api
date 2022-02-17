@@ -28,13 +28,10 @@
 
 ### <span>Flappy Bird</span> <span>2020-09-13</span>
 
-  - 
 
 ### <span>Finadict</span> <span>2021-10-03</span>
 
-  - 
 
 ### <span>Snake Game</span> <span>2021-09-27</span>
 
-  - 
 

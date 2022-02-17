@@ -117,6 +117,7 @@ def project(data):
 
 """
         for j in data["project"][i]["details"].split("\n"):
-            res += f"""  - {j}
+            if not j=="":
+                res += f"""  - {j}
 """
     return res
