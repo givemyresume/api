@@ -16,8 +16,20 @@ async def read_item(user: str):
     try:
         is_signed_up = client.query(q.get(q.match(q.index("users_index"), user)))
         try:
-            data = client.query(q.get(q.match(q.index("resume_index"), user)))["data"]
-            write_to_file(data)
+            try:
+                data = client.query(q.get(q.match(q.index("resume_index"), user)))["data"]
+            except:
+                return {
+                    "status": "FAILED",
+                    "message": "No data found. Try saving your data by sending it to the '/savedata' endpoint."
+                }
+            try:
+                write_to_file(data)
+            except:
+                return {
+                    "status": "FAILED",
+                    "message": "Resume creation failed!"
+                }
             os.system("./push.sh")
             return {
                 "status": "SUCCESS",
@@ -26,7 +38,7 @@ async def read_item(user: str):
         except:
             return {
                 "status": "FAILED",
-                "message": "No data found. Try saving your data by sending it to the '/savedata' endpoint."
+                "message": "Oops! Something went wrong..."
             }
     except:
         return {
