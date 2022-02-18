@@ -1,4 +1,4 @@
-import os, json
+import os, json, re
 from src.md_to_html_and_pdf import make_html, write_pdf
 
 
@@ -40,7 +40,22 @@ def write_to_file(data):
 
     write_pdf(html, prefix=prefix, chrome="")
 
+    with open("givemyresume.github.io/index.html", "r") as htmlfp:
+        html_content = htmlfp.read()
 
+    with open("givemyresume.github.io/README.md", "r") as readme:
+        readme_content = readme.read()
+    
+    if not re.search(f"'{data['user']}'", html_content) and not re.search(f"/{data['user']}\)", readme_content):
+        with open("givemyresume.github.io/index.html", "w") as htmlfp:
+            content_to_add = f"    <a href='{data['user']}'>{data['full_name']}'s resume</a>"
+            html_content = html_content.split("\n")
+            html_content.insert(-2, content_to_add)
+            htmlfp.write("\n".join(html_content))
+
+        with open("givemyresume.github.io/README.md", "a") as readme:
+            content_to_add = f"  - [{data['full_name']}](https://givemyresume.github.io/{data['user']})\n"
+            readme.write(content_to_add)
 
 
 
