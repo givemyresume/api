@@ -1,0 +1,3 @@
+[submodule "givemyresume.github.io"]
+	path = givemyresume.github.io
+	url = https://github.com/givemyresume/givemyresume.github.io.git
