@@ -16,19 +16,38 @@ I am a good boy
 
 ## Education
 
-### <span>dwff</span> <span>fegaw -- esggs</span>
+### <span>Calcutta Institute of Engg. and Management</span> <span>08/20 -- Present</span>
 
-  - wfwg
+  - Made great friends
+  - Had lots of fun
 
-### <span>fwaga</span> <span>geegea -- gaag</span>
+### <span>Amrita Vidyalayam</span> <span>05/2016 -- 04/2018</span>
 
-  - wfwagg
-  - afawf
-  - affafa
+  - Spent the best time of my life here
+  - Enjoyed a lot
+
+### <span>Amrita Vidyalayam</span> <span>2014 -- 2016</span>
+
+  - Teachers were great
 
 
 ## Experience
 
+### <span>DevOps Intern, FiftyFive Technologies</span> <span>01/2022 -- Present</span>
+
+  - Learned a lot of new technologies
+  - Made many new connections
+
+### <span>Cloud Intern, Ardent Computech</span> <span>06/2019 -- 07/2019</span>
+
+  - Learned Azure Cloud Services
+  - Used IoT Hub
+
 
 ## Projects
+
+### <span>Finadict</span> <span>10/2021</span>
+
+  - Predict stocks, forex, crypto prices
+  - Uses ML
 
