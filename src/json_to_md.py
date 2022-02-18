@@ -15,8 +15,8 @@ def write_to_file(data):
 """
 
     script_dir = os.path.dirname(__file__)
-    saved_data_folder = '/'.join(script_dir.split('/')[:-2])+'/saved_data'
-    user_dir = f"{saved_data_folder}/{data['user']}"
+    givemyresume_folder = '/'.join(script_dir.split('/')[:-2])+'/givemyresume.github.io'
+    user_dir = f"{givemyresume_folder}/{data['user']}"
 
     if not os.path.isdir(f"{user_dir}"):
         try:
