@@ -1,4 +1,3 @@
-from email import message
 import os
 from fastapi import FastAPI, Request
 from faunadb import query as q
@@ -7,7 +6,10 @@ from src.json_to_md import write_to_file
 
 
 app = FastAPI()
-client = FaunaClient(secret="fnAEffAgzSACTABvMpg2lOwlPquGo_oNvuN1XHbA")
+FAUNA_DB_KEY = os.getenv("FAUNA_DB_KEY")
+
+
+client = FaunaClient(secret=FAUNA_DB_KEY)
 indexes = client.query(q.paginate(q.indexes()))
 
 
@@ -33,7 +35,7 @@ async def create_resume(user: str):
             os.system("./push.sh")
             return {
                 "status": "SUCCESS",
-                "message": f"You can download you resume from here: https://raw.githubusercontent.com/subhayu99/resume_builder_api/main/saved_data/{data['user']}/index.pdf"
+                "message": f"Visit https://givemyresume.github.io/{data['user']}/index.pdf to download your resume"
             }
         except:
             return {

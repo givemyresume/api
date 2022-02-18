@@ -1,6 +1,4 @@
 import requests
-import json
-import os
 
 def push_to_github(path, repo):
     url="https://api.github.com/repos/"+repo+"/contents/"+path
