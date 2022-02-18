@@ -12,7 +12,7 @@ indexes = client.query(q.paginate(q.indexes()))
 
 
 @app.get("/resume/{user}")
-async def read_item(user: str):
+async def create_resume(user: str):
     try:
         is_signed_up = client.query(q.get(q.match(q.index("users_index"), user)))
         try:

@@ -5,13 +5,17 @@
 - [https://subhayu.codes](https://subhayu.codes)
 - Shyampur Colony, Street No 18
 
-I am a good boy
+Hello! I am Subhayu Kumar Bala, a Developer, Open Source enthusiast and a Senior pursuing my Bachelors in Information Technology. I am keenly interested in any of the Computer Science subdomains, Astrophysics, Astronomy and a little bit of Philosophy.
 
 
 ## Skills
-  - Hacking
-  - Gaming
-  - Fighting
+  - Languages: Python, C/C++, Java, SQL, HTML, CSS, JavaScript, BASH, Perl, C#
+  - Library/Frameworks: Pandas, Matplotlib, NumPy, OpenCV, Keras, TensorFlow, Django, Flask, Processing, P5.js, FB Prophet, Streamlit
+  - Tools: Docker, Kubernetes, VMs, Git, NGINX, Apache Server, Jenkins, Git
+  - Platforms: Linux (Debian, RedHat based systems), Windows, Cloud (Microsoft Azure, Google Cloud, Heroku)
+  - Databases: MySQL, Postgres, MongoDB, Google Cloud Databases
+  - Technologies: Linux System Administration, Cloud Computing, Web Development, DevOps, Machine Learning, Data Science, Data Structures, Algorithms, Object Oriented Programming, SDLC
+  - Other skills: Project Management, Strategy Formulation, Strong written and verbal communication skills, Proactive listening, Teamwork, Open mindedness, Creative Thinking, Excellent problem solving skills
 
 
 ## Education
@@ -38,7 +42,7 @@ I am a good boy
   - Learned a lot of new technologies
   - Made many new connections
 
-### <span>Cloud Intern, Ardent Computech</span> <span>06/2019 -- 07/2019</span>
+### <span>Cloud Intern, Ardent Computech Pvt. Ltd.</span> <span>06/2019 -- 07/2019</span>
 
   - Learned Azure Cloud Services
   - Used IoT Hub
