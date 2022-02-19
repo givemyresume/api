@@ -45,7 +45,6 @@ def write_to_file(data):
 
     with open(f"{givemyresume_folder}/index.html", "r") as htmlfp:
         html_content = htmlfp.read()
-        print("read contents of ")
 
     with open(f"{givemyresume_folder}/README.md", "r") as readme:
         readme_content = readme.read()
