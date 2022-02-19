@@ -71,7 +71,7 @@ def personal(data):
        res += f"""- {data["phone"]}
 """
     if data["website"]:
-        res += f"""- [{data["website"]}]({data["website"]})
+        res += f"""- [{re.sub("(https?://|/.*$)", "", data["website"])}]({data["website"]})
 """
     if data["address"]:
        res += f"""- {data["address"]}
