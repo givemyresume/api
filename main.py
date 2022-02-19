@@ -35,7 +35,7 @@ async def create_resume(user: str):
             os.system("./push.sh")
             return {
                 "status": "SUCCESS",
-                "message": f"Visit https://givemyresume.github.io/{data['user']}/index.pdf to download your resume"
+                "message": f"Visit https://givemyresume.github.io/{data['user']} to download your resume"
             }
         except:
             return {

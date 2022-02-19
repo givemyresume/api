@@ -1,4 +1,6 @@
 fastapi[all]
+uvicorn
 requests
 faunadb
 markdown
+gunicorn

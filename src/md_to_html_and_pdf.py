@@ -63,7 +63,7 @@ CHROME_GUESSES_LINUX = [
             "/bin",
             "/opt/google/chrome",
         ),
-        ("google-chrome", "chrome", "chromium", "chromium-browser"),
+        ("chromedriver", "google-chrome", "chrome", "chromium", "chromium-browser"),
     )
 ]
 
@@ -77,7 +77,7 @@ def guess_chrome_path() -> str:
         guesses = CHROME_GUESSES_LINUX
     for guess in guesses:
         if os.path.exists(guess):
-            logging.info("Found Chrome or Chromium at " + guess)
+            print("Found Chrome or Chromium at " + guess)
             return guess
     raise ValueError("Could not find Chrome. Please set CHROME_PATH.")
 
@@ -103,7 +103,7 @@ def make_html(md: str, prefix: str = "resume", css_path: str = "resume.css") -> 
         with open(css_path, "r") as cssfp:
             css_path = cssfp.read()
     except FileNotFoundError:
-        print(css_path + ".css not found. Output will by unstyled.")
+        print(css_path + " not found. Output will by unstyled.")
         css_path = ""
     return "".join(
         (
@@ -119,7 +119,6 @@ def write_pdf(html: str, prefix: str = "resume", chrome: str = "") -> None:
     Write html to prefix.pdf
     """
     chrome = chrome or guess_chrome_path()
-
     html64 = base64.b64encode(html.encode("utf-8"))
     options = [
         "--headless",
@@ -130,7 +129,6 @@ def write_pdf(html: str, prefix: str = "resume", chrome: str = "") -> None:
     # https://bugs.chromium.org/p/chromium/issues/detail?id=737678
     if sys.platform == "win32":
         options.append("--disable-gpu")
-
     tmpdir = tempfile.TemporaryDirectory(prefix="resume.md_")
     options.append(f"--crash-dumps-dir={tmpdir.name}")
     options.append(f"--user-data-dir={tmpdir.name}")
@@ -144,10 +142,10 @@ def write_pdf(html: str, prefix: str = "resume", chrome: str = "") -> None:
             ],
             check=True,
         )
-        logging.info(f"Wrote {prefix}.pdf")
+        print(f"Wrote {prefix}.pdf")
     except subprocess.CalledProcessError as exc:
         if exc.returncode == -6:
-            logging.warning(
+            print(
                 "Chrome died with <Signals.SIGABRT: 6> "
                 f"but you may find {prefix}.pdf was created successfully."
             )
@@ -160,8 +158,8 @@ def write_pdf(html: str, prefix: str = "resume", chrome: str = "") -> None:
         try:
             shutil.rmtree(tmpdir.name)
         except PermissionError as exc:
-            logging.warning(f"Could not delete {tmpdir.name}")
-            logging.info(exc)
+            print(f"Could not delete {tmpdir.name}")
+            print(exc)
 
 
 if __name__ == "__main__":
@@ -197,7 +195,7 @@ if __name__ == "__main__":
     if args.quiet:
         logging.basicConfig(level=logging.WARN, format="%(message)s")
     else:
-        logging.basicConfig(level=logging.INFO, format="%(message)s")
+        logging.basicConfig(filename='html_pdf.log', encoding='utf-8',level=logging.DEBUG, format="%(message)s")
 
     prefix, _ = os.path.splitext(os.path.abspath(args.file))
 
@@ -208,7 +206,7 @@ if __name__ == "__main__":
     if not args.no_html:
         with open(prefix + ".html", "w", encoding="utf-8") as htmlfp:
             htmlfp.write(html)
-            logging.info(f"Wrote {htmlfp.name}")
+            print(f"Wrote {htmlfp.name}")
 
     if not args.no_pdf:
         write_pdf(html, prefix=prefix, chrome=args.chrome_path)

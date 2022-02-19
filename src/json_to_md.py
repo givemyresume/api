@@ -14,8 +14,8 @@ def write_to_file(data):
 {project(data)}
 """
 
-    script_dir = os.path.dirname(__file__)
-    givemyresume_folder = '/'.join(script_dir.split('/')[:-2])+'/givemyresume.github.io'
+
+    givemyresume_folder = os.path.join(os.path.split(os.path.dirname(__file__))[0], 'givemyresume.github.io')
     user_dir = f"{givemyresume_folder}/{data['user']}"
 
     if not os.path.isdir(f"{user_dir}"):
@@ -33,27 +33,31 @@ def write_to_file(data):
 
     prefix = f"{user_dir}/index"
 
-    html = make_html(md, prefix=prefix, css_path=f"{script_dir}/resume.css")
+    html = make_html(md, prefix=prefix, css_path=f"{os.path.dirname(__file__)}/resume.css")
 
     with open(prefix + ".html", "w", encoding="utf-8") as htmlfp:
         htmlfp.write(html)
 
-    write_pdf(html, prefix=prefix, chrome="")
+    if os.getenv("CHROME_ENABLED")=="yes":
+        write_pdf(html, prefix=prefix, chrome="")
+    else:
+        print("Chrome is not enabled... PDF cannot be generated!")
 
-    with open("givemyresume.github.io/index.html", "r") as htmlfp:
+    with open(f"{givemyresume_folder}/index.html", "r") as htmlfp:
         html_content = htmlfp.read()
+        print("read contents of ")
 
-    with open("givemyresume.github.io/README.md", "r") as readme:
+    with open(f"{givemyresume_folder}/README.md", "r") as readme:
         readme_content = readme.read()
     
     if not re.search(f"'{data['user']}'", html_content) and not re.search(f"/{data['user']}\)", readme_content):
-        with open("givemyresume.github.io/index.html", "w") as htmlfp:
+        with open(f"{givemyresume_folder}/index.html", "w") as htmlfp:
             content_to_add = f"    <a href='{data['user']}'>{data['full_name']}'s resume</a>"
             html_content = html_content.split("\n")
             html_content.insert(-2, content_to_add)
             htmlfp.write("\n".join(html_content))
 
-        with open("givemyresume.github.io/README.md", "a") as readme:
+        with open(f"{givemyresume_folder}/README.md", "a") as readme:
             content_to_add = f"  - [{data['full_name']}](https://givemyresume.github.io/{data['user']})\n"
             readme.write(content_to_add)
 
