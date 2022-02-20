@@ -51,7 +51,7 @@ def write_to_file(data):
     
     if not re.search(f"'{data['user']}'", html_content) and not re.search(f"/{data['user']}\)", readme_content):
         with open(f"{givemyresume_folder}/index.html", "w") as htmlfp:
-            content_to_add = f"    <a href='{data['user']}'>{data['full_name']}'s resume</a>"
+            content_to_add = f"    <a href='{data['user']}'>{data['full_name']}'s resume</a><br>"
             html_content = html_content.split("\n")
             html_content.insert(-2, content_to_add)
             htmlfp.write("\n".join(html_content))
