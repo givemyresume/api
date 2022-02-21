@@ -16,14 +16,13 @@ indexes = client.query(q.paginate(q.indexes()))
 @app.get("/")
 async def root():
     info = {
-    "availabe_routes": 
-    {
+    "availabe_routes": {
         "/schema": "JSON schema to send at /savedata", 
         "/savedata": "save your data to the databasse", 
         "/resume/{user}": "replace {user} with the username you used to register or save data"
     }
 }
-    return 
+    return info
 
 
 @app.get("/schema")
