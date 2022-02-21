@@ -13,6 +13,95 @@ client = FaunaClient(secret=FAUNA_DB_KEY)
 indexes = client.query(q.paginate(q.indexes()))
 
 
+@app.get("/")
+async def root():
+    info = {
+    "availabe_routes": 
+    {
+        "/schema": "JSON schema to send at /savedata", 
+        "/savedata": "save your data to the databasse", 
+        "/resume/{user}": "replace {user} with the username you used to register or save data"
+    }
+}
+    return 
+
+
+@app.get("/schema")
+async def send_schema():
+    schema = {
+    "user": "foo-bar",
+    "full_name": "foo-bar",
+    "address": "foo-bar",
+    "phone": "foo-bar",
+    "email": "foo-bar",
+    "website": "foo-bar",
+    "summary": "foo-bar",
+    "skills": "foo-bar",
+    "education": {
+        "1": {
+            "school": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "2": {
+            "school": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "3": {
+            "school": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        }
+    },
+    "job": {
+        "1": {
+            "employer": "foo-bar",
+            "position": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "2": {
+            "employer": "foo-bar",
+            "position": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "3": {
+            "employer": "foo-bar",
+            "position": "foo-bar",
+            "start": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        }
+    },
+    "project": {
+        "1": {
+            "name": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "2": {
+            "name": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        },
+        "3": {
+            "name": "foo-bar",
+            "end": "foo-bar",
+            "details": "foo-bar"
+        }
+    },
+    "references": "foo-bar"
+}
+    return schema
+
+
 @app.get("/resume/{user}")
 async def create_resume(user: str):
     try:
