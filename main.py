@@ -115,10 +115,10 @@ async def create_resume(user: str):
                 }
             try:
                 write_to_file(data)
-            except:
+            except Exception as e:
                 return {
                     "status": "FAILED",
-                    "message": "Resume creation failed!"
+                    "message": str(e)
                 }
             os.system("./push.sh")
             return {
