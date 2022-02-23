@@ -3,7 +3,8 @@ import smtplib
 
 def sendmail(to, url, name):
     sender = "subhayu@givemyresume.tech"
-    password = os.getenv("EMAIL_PASS")
+    with open("./cred.txt") as c:
+        password = c.readline()
     subject = "Hooray!!! Your resume has been created"
     smtpserver = smtplib.SMTP("smtp.givemyresume.tech:587")
     smtpserver.login(sender, password)
