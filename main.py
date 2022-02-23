@@ -134,7 +134,7 @@ async def create_resume(user: str):
         except Exception as e:
             return {
                 "status": "FAILED",
-                "message": str(e)
+                "message": str(e.with_traceback())
             }
     except:
         return {
