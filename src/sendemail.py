@@ -2,6 +2,7 @@ import os
 import smtplib
 
 def sendmail(to, url, name):
+    print(to, url, name)
     sender = "subhayu@givemyresume.tech"
     password = os.getenv("EMAIL_PASS")
     subject = "Hooray!!! Your resume has been created"
