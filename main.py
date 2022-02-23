@@ -122,12 +122,8 @@ async def create_resume(user: str):
                     "message": str(e)
                 }
             os.system("./push.sh")
-            to = data["email"]
-            url = f"https://givemyresume.tech/{data['user']}"
-            name = data["full_name"]
-            print(to, url, name)
             print("sending email")
-            threading.Timer(120, sendmail(to, url, name)).start()
+            threading.Timer(120, sendmail(data["email"], f"https://givemyresume.tech/{data['user']}", data["full_name"])).start()
             print("email sent")
             return {
                 "status": "SUCCESS",
