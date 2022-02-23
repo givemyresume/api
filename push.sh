@@ -4,6 +4,7 @@
 git config --global user.email "balasubhayu99@gmail.com"
 git config --global user.name "Subhayu Kumar Bala"
 
+chmod 777 givemyresume.github.io -R
 cd givemyresume.github.io && echo "entered givemyresume.github.io"
 git add . && echo "added all files"
 git commit -m "add resume using script" && echo "committed the added files"
