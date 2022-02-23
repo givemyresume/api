@@ -124,6 +124,7 @@ async def create_resume(user: str):
             os.system("./push.sh")
             to = data["email"]
             url = f"https://givemyresume.tech/{data['user']}"
+            name = data["full_name"]
             return {
                 "status": "SUCCESS",
                 "message": "We will send you an email with your resume link."
