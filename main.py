@@ -131,10 +131,10 @@ async def create_resume(user: str):
                 "status": "SUCCESS",
                 "message": "We will send you an email with your resume link."
             }
-        except:
+        except Exception as e:
             return {
                 "status": "FAILED",
-                "message": "Oops! Something went wrong..."
+                "message": str(e)
             }
     except:
         return {
