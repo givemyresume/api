@@ -122,7 +122,7 @@ async def create_resume(user: str):
                     "message": str(e)
                 }
             os.system("./push.sh")
-            
+            to = data["email"]
             return {
                 "status": "SUCCESS",
                 "message": "We will send you an email with your resume link."
