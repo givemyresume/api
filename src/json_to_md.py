@@ -50,7 +50,7 @@ def write_to_file(data):
         readme_content = readme.read()
     
     if not re.search(f"'{data['user']}'", html_content):
-        with open(f"index.html", "w") as htmlfp:
+        with open(f"{givemyresume_folder}/index.html", "w") as htmlfp:
             html_content = html_content.split("\n")
             last_icon = re.findall('icon-[1-5]', html_content[-8])
             content_to_add = f"					<li class='icon-@ tile'><a href='{data['user']}'><br><br>{data['full_name']}</a></li>"
@@ -63,7 +63,7 @@ def write_to_file(data):
             htmlfp.write("\n".join(html_content))
             
     if not re.search(f"/{data['user']}\)", readme_content):
-        with open(f"README.md", "a") as readme:
+        with open(f"{givemyresume_folder}/README.md", "a") as readme:
             content_to_add = f"  - [{data['full_name']}](https://givemyresume.github.io/{data['user']})\n"
             readme.write(content_to_add)
 
