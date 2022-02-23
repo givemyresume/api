@@ -10,5 +10,5 @@ def sendmail(to, url, name):
     header = f'To:{to}\nFrom:{sender}\nSubject:{subject}\n'
     msg = header + f'\n Hello, {name}\n\n You can now view your resume at {url}\n\n'
     smtpserver.sendmail(sender, to, msg)
-    print(to, url, name)
     smtpserver.close()
+    print(to, url, name)
