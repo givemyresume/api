@@ -11,4 +11,3 @@ def sendmail(to, url, name):
     msg = header + f'\n Hello, {name}\n\n You can now view your resume at {url}\n\n'
     smtpserver.sendmail(sender, to, msg)
     smtpserver.close()
-    print(to, url, name)
