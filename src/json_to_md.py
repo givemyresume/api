@@ -51,9 +51,15 @@ def write_to_file(data):
     
     if not re.search(f"'{data['user']}'", html_content) and not re.search(f"/{data['user']}\)", readme_content):
         with open(f"{givemyresume_folder}/index.html", "w") as htmlfp:
-            content_to_add = f"    <a href='{data['user']}'>{data['full_name']}'s resume</a><br>"
             html_content = html_content.split("\n")
-            html_content.insert(-2, content_to_add)
+            last_icon = re.findall('icon-[1-5]', html_content[-8])
+            content_to_add = f'					<li class="icon-@ tile"><a href={data["user"]}><br><br>{data["full_name"]}</a></li>'
+            if last_icon[0] == "icon-5":
+                html_content.insert(-6, '				<ul class="gap social">')
+                html_content.insert(-6, content_to_add.replace('@', '1'))
+                html_content.insert(-6, '				</ul>')
+            else:
+                html_content.insert(-7, content_to_add.replace('@', str(int(re.findall('[1-5]', last_icon[0])[0])+1)))
             htmlfp.write("\n".join(html_content))
 
         with open(f"{givemyresume_folder}/README.md", "a") as readme:
