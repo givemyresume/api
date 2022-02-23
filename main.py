@@ -125,7 +125,8 @@ async def create_resume(user: str):
             to = data["email"]
             url = f"https://givemyresume.tech/{data['user']}"
             name = data["full_name"]
-            threading.Timer(120, sendmail(to, url, name)).start()
+            sendmail(to, url, name)
+            #threading.Timer(120, sendmail(to, url, name)).start()
             print("email sent")
             return {
                 "status": "SUCCESS",
