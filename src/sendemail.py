@@ -6,7 +6,6 @@ def sendmail(to, url, name):
     password = os.getenv("EMAIL_PASS")
     subject = "Hooray!!! Your resume has been created"
     smtpserver = smtplib.SMTP("smtp.givemyresume.tech:587")
-    print(to, url, name, password)
     smtpserver.login(sender, password)
     header = f'To:{to}\nFrom:{sender}\nSubject:{subject}\n'
     msg = header + f'\n Hello, {name}\n\n You can now view your resume at {url}\n\n'
