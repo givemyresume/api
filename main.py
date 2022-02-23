@@ -107,35 +107,34 @@ async def create_resume(user: str):
     try:
         is_signed_up = client.query(q.get(q.match(q.index("users_index"), user)))
         try:
-            try:
-                data = client.query(q.get(q.match(q.index("resume_index"), user)))["data"]
-            except:
-                return {
-                    "status": "FAILED",
-                    "message": "No data found. Try saving your data by sending it to the '/savedata' endpoint."
-                }
-            try:
-                write_to_file(data)
-            except Exception as e:
-                return {
-                    "status": "FAILED",
-                    "message": str(e)
-                }
-            os.system("./push.sh")
-            to = data["email"]
-            url = f"https://givemyresume.tech/{data['user']}"
-            name = data["full_name"]
-            threading.Timer(120, sendmail(to, url, name)).start()
-            print("email sent")
+            data = client.query(q.get(q.match(q.index("resume_index"), user)))["data"]
+        except:
             return {
-                "status": "SUCCESS",
-                "message": "We will send you an email with your resume link."
+                "status": "FAILED",
+                "message": "No data found. Try saving your data by sending it to the '/savedata' endpoint."
             }
+        try:
+            write_to_file(data)
         except Exception as e:
             return {
                 "status": "FAILED",
-                "message": str(e.with_traceback())
+                "message": str(e)
             }
+        os.system("./push.sh")
+        to = data["email"]
+        url = f"https://givemyresume.tech/{data['user']}"
+        name = data["full_name"]
+        print("sending email")
+        threading.Timer(120, sendmail(to, url, name)).start()
+        print("email sent")
+        return {
+            "status": "SUCCESS",
+            "message": "We will send you an email with your resume link."
+        }
+        return {
+            "status": "FAILED",
+            "message": str(e)
+        }
     except:
         return {
             "status": "FAILED",
