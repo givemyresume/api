@@ -1,13 +1,14 @@
 import os
+import threading
 from fastapi import FastAPI, Request
 from faunadb import query as q
 from faunadb.client import FaunaClient
 from src.json_to_md import write_to_file
+from src.sendemail import sendmail
 
 
 app = FastAPI()
 FAUNA_DB_KEY = os.getenv("FAUNA_DB_KEY")
-
 
 client = FaunaClient(secret=FAUNA_DB_KEY)
 indexes = client.query(q.paginate(q.indexes()))
@@ -121,9 +122,14 @@ async def create_resume(user: str):
                     "message": str(e)
                 }
             os.system("./push.sh")
+            to = data["email"]
+            url = f"https://givemyresume.tech/{data['user']}"
+            name = data["full_name"]
+            threading.Timer(120, sendmail(to, url, name)).start()
+            print("email sent")
             return {
                 "status": "SUCCESS",
-                "message": f"Visit https://givemyresume.tech/{data['user']} to download your resume"
+                "message": "We will send you an email with your resume link."
             }
         except:
             return {
