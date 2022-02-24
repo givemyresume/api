@@ -5,7 +5,7 @@ body {
     line-height: 1.2;
 }
 #resume {
-    position: absolute;
+    /*position: absolute;*/
     margin-left: 30;
     margin-right: 30;
     margin-top: 25;
