@@ -1,4 +1,4 @@
-import os, json, re
+import os, json, re, urllib.parse
 from src.md_to_html_and_pdf import make_html, write_pdf
 
 
@@ -64,7 +64,7 @@ def write_to_file(data):
             
     if not re.search(f"/{data['user']}\)", readme_content):
         with open(f"{givemyresume_folder}/README.md", "a") as readme:
-            encoded_user = urllib.parse.quote({data['user']}, safe='')
+            encoded_user = urllib.parse.quote(data['user'], safe='')
             content_to_add = f"  - [{data['full_name']}](https://givemyresume.github.io/{encoded_user})\n"
             readme.write(content_to_add)
 
