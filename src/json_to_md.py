@@ -61,10 +61,10 @@ def write_to_file(data):
             else:
                 html_content.insert(-7, content_to_add.replace('@', str(int(re.findall('[1-5]', last_icon[0])[0])+1)))
             htmlfp.write("\n".join(html_content))
-            
-    if not re.search(f"/{data['user']}\)", readme_content):
+
+    encoded_user = urllib.parse.quote(data['user'], safe='') 
+    if not re.search(f"/{encoded_user}\)", readme_content):
         with open(f"{givemyresume_folder}/README.md", "a") as readme:
-            encoded_user = urllib.parse.quote(data['user'], safe='')
             content_to_add = f"  - [{data['full_name']}](https://givemyresume.github.io/{encoded_user})\n"
             readme.write(content_to_add)
 
