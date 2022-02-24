@@ -1,4 +1,3 @@
-import os
 import smtplib
 
 def sendmail(to, url, name):
