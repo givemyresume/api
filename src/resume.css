@@ -3,12 +3,14 @@ body {
     background: #111111;
     font: 1.1em "Times New Roman";
     line-height: 1.2;
-    margin: 40px 0;
 }
 #resume {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 40px 60px;
+    position: absolute;
+    margin-left: 30;
+    margin-right: 30;
+    margin-top: 25;
+    max-width: 1024px;
+    padding: 40px 55px;
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     box-shadow: 2px 2px 4px #AAAAAA;
