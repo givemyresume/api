@@ -92,18 +92,18 @@ def personal(data):
 
 
 def skill(data):
-    res = """## Skills
-"""
+    res = ""
     for i in data["skills"].split("\n"):
         if not i=="":
             res += f"""  - {i}
 """
+    if not res == "":
+        res = "## Skills\n" + res
     return res
 
 
 def experience(data):
-    res = """## Experience
-"""
+    res = ""
     for i in data["job"]:
         if not data["job"][i]["position"]=="":
             res += f"""
@@ -114,12 +114,13 @@ def experience(data):
             if not j=="":
                 res += f"""  - {j}
 """
+    if not res == "":
+        res = "## Experience\n" + res
     return res
 
 
 def education(data):
-    res = """## Education
-"""
+    res = ""
     for i in data["education"]:
         if not data["education"][i]["school"]=="":
             res += f"""
@@ -130,12 +131,13 @@ def education(data):
             if not j=="":
                 res += f"""  - {j}
 """
+    if not res == "":
+        res = "## Education\n" + res
     return res
 
 
 def project(data):
-    res = """## Projects
-"""
+    res = ""
     for i in data["project"]:
         if not data["project"][i]["name"]=="":
             res += f"""
@@ -146,4 +148,6 @@ def project(data):
             if not j=="":
                 res += f"""  - {j}
 """
+    if not res == "":
+        res = "## Projects\n" + res
     return res
