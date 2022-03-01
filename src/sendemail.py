@@ -1,8 +1,9 @@
 import smtplib
+import os
 
 def sendmail(to, url, name):
     sender = "subhayu@givemyresume.tech"
-    password = "byEeqeH4"
+    password = os.getenv("EMAIL_PASS")
     subject = "Your resume has been created"
     smtpserver = smtplib.SMTP("smtp.givemyresume.tech:587")
     smtpserver.login(sender, password)
@@ -10,7 +11,7 @@ def sendmail(to, url, name):
     msg = header + f'''
 Hello, {name}
 
-You can now view your resume at {url}
+Your resume has been created and will be live in a minute at {url}
 
 Here are some things you should know:
 To download your resume as pdf
@@ -24,6 +25,7 @@ To download your resume as pdf
         - Set your desired paper configurations
         - Click the icon with PDF download sign on it 
         - Select where to save and click `Save`
+    - In both cases remember to turn off Headers & Footers
 
 Additionaly, you can share the link to share your resume with others
 
