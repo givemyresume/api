@@ -1,5 +1,5 @@
 Authlib==1.0.0
-fastapi[all]
+fastapi==0.75.1
 faunadb==4.2.0
 gunicorn
 jose==1.0.0
@@ -10,5 +10,5 @@ pydantic==1.8.2
 pytz==2019.3
 requests
 requests==2.22.0
-starlette==0.16.0
+starlette
 uvicorn
