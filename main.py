@@ -29,12 +29,14 @@ oauth = OAuth(config)
 @app.get("/")
 async def root():
     info = {
-    "availabe_routes": {
-        "/schema": "JSON schema to send at /savedata", 
-        "/savedata": "save your data to the databasse", 
-        "/resume/{user}": "replace {user} with the username you used to register or save data"
+        "availabe_routes": {
+            "/schema": "shows the JSON schema to POST at /savedata", 
+            "/register": "let's you register to the app",
+            "/login": "let's you login and get an access token"
+            "/savedata": "let's you save your data to the database using the access token", 
+            "/resume/{user}": "replace {user} with your registered username to generate your resume"
+        }
     }
-}
     return info
 
 
