@@ -119,14 +119,14 @@ async def send_schema():
 @app.get("/resume/{user}")
 async def create_resume(user: str):
     try:
-        user = client.query(q.get(q.match(q.index("users_index"), user)))
+        is_user_present = client.query(q.get(q.match(q.index("users_index"), user)))
         try:
             try:
                 data = client.query(q.get(q.match(q.index("resume_index"), user)))["data"]
-            except:
+            except Exception as e:
                 return {
                     "status": "FAILED",
-                    "message": "No data found. Try saving your data by sending it to the '/savedata' endpoint."
+                    "message": e
                 }
             try:
                 write_to_file(data)
